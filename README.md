@@ -1,3 +1,3 @@
-# 우리의_목표
+# amatda-spring
 
 <img src="https://i.imgur.com/FzUEKr4.png">
