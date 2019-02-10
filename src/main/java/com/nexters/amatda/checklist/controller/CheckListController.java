@@ -45,5 +45,14 @@ public class CheckListController {
 		
 		return "/checklist/addList";
 	}
+	
+	@RequestMapping(value = "/searchItem", method = RequestMethod.GET)
+	public String searchItem(CheckList checkList) {
+		
+		
+		service.listItemSearch(checkList);
+		
+		return "/checklist/searchItem";
+	}
 
 }

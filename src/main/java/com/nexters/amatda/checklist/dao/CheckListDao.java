@@ -35,22 +35,50 @@ public class CheckListDao implements ICheckListDao {
 		return dbMap;
 	}
 
+//	@Override
+//	public Member memberSelect(Member member) {
+//		
+//		Member mem = dbMap.get(member.getMemId());
+//		return mem;
+//		
+//	}
+	
 	@Override
 	public CheckList listItemSelect(CheckList checkList) {
 		// TODO Auto-generated method stub
-		return null;
+		CheckList chckli = dbMap.get(checkList.getItemTitle());
+		return chckli;
 	}
+	
+//	@Override
+//	public Member memberUpdate(Member member) {
+//		
+//		dbMap.put(member.getMemId(), member);
+//		return dbMap.get(member.getMemId());
+//		
+//	}
 
 	@Override
 	public CheckList listItemUpdate(CheckList checkList) {
 		// TODO Auto-generated method stub
-		return null;
+		dbMap.put(checkList.getItemTitle(), checkList);
+		return dbMap.get(checkList.getItemTitle());
 	}
+	
+//	@Override
+//	public Map<String, Member> memberDelete(Member member) {
+//		
+//		dbMap.remove(member.getMemId());
+//		return dbMap;
+//		
+//	}
 
 	@Override
 	public Map<String, CheckList> listItemDelete(CheckList checkList) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		dbMap.remove(checkList.getItemTitle());
+		return dbMap;
 	}
 
 

@@ -6,9 +6,9 @@ import com.nexters.amatda.checklist.CheckList;
 public interface ICheckListService {
 	
 	void listItemRegister(CheckList checkList);
-	CheckList listItemSearch(CheckList checkList);
-	CheckList listItemModify(CheckList checkList);
-	int listItemRemove(CheckList checkList);
+	void listItemSearch(CheckList checkList);
+	CheckList[] listItemModify(CheckList checkList);
+	void listItemRemove(CheckList checkList);
 
 
 }
