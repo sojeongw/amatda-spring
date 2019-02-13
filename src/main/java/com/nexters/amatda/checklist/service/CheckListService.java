@@ -22,66 +22,48 @@ public class CheckListService implements ICheckListService{
 	public void listItemRegister(CheckList checkList) {
 		// TODO Auto-generated method stub
 		
-		printLists(dao.listItemInsert(checkList));
+//		printLists(dao.listItemInsert(checkList));
 		
-		/*
-		실제 DB 생성 시 
-		int result = dao.listInsert(checkList);
+//		/* 실제 DB 생성 시 
+		int result = dao.listItemInsert(checkList);
 		
 		if (result == 0) {
-			System.out.println("fail");
+			System.out.println("insert fail");
 		} else {
-			System.out.println("success");
+			System.out.println("insert success");
 		}
-		*/
+//		*/
 		
 	}
-	
-//	@Override
-//	public void memberSearch(Member member) {
-//		printMember(dao.memberSelect(member));
-//	}
-	
+
+
 	@Override
 	public void listItemSearch(CheckList checkList) {
 		// TODO Auto-generated method stub
-		printList(dao.listItemSelect(checkList));
-	} 
-	
-//	@Override
-//	public Member[] memberModify(Member member) {
-//		
-//		Member memBef = dao.memberSelect(member);
-//		Member memAft = dao.memberUpdate(member);
-//		printMember(memAft);
-//		
-//		return new Member[]{memBef, memAft};
-//	}
+		
+	}
+
 
 	@Override
 	public CheckList[] listItemModify(CheckList checkList) {
 		// TODO Auto-generated method stub
-		CheckList chckliBefore = dao.listItemSelect(checkList);
-		CheckList chckliAfter = dao.listItemUpdate(checkList);
-		printList(chckliAfter);
-		
-		return new CheckList[] {chckliBefore,chckliAfter};
+		return null;
 	}
 
-//	@Override
-//	public void memberRemove(Member member) {
-//		printMembers(dao.memberDelete(member));
-//	}
-	
+
 	@Override
 	public void listItemRemove(CheckList checkList) {
 		// TODO Auto-generated method stub
-		printLists(dao.listItemDelete(checkList));
+		
 	}
 	
+
+	
+
 	
 	
 	
+	/*
 	///////////////// 임시 db 결과 출력 기능 /////////////////
 	private void printLists(Map<String, CheckList> map) {
 
@@ -98,11 +80,11 @@ public class CheckListService implements ICheckListService{
 
 	private void printList(CheckList cl) {
 
-		System.out.print("checklist title:" + cl.getItemTitle() + "\t");	
+		System.out.print("checklist title:" + cl.getItemTitle() + "\n");	
 
 	}	
 	///////////////// 임시 db 결과 출력 끝 /////////////////
-
+*/
 
 
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.nexters.amatda.HomeController;
 import com.nexters.amatda.checklist.CheckList;
@@ -54,5 +55,29 @@ public class CheckListController {
 		
 		return "/checklist/searchItem";
 	}
+	
+	@RequestMapping(value = "/modifyItem", method = RequestMethod.POST)
+	public ModelAndView modifyItem(CheckList checkList) {
+		
+		System.out.println( "controller");
+
+		CheckList[] items = service.listItemModify(checkList);
+
+		ModelAndView mav = new ModelAndView();
+
+		// model
+		mav.addObject("chckliBefore", items[0]);
+		mav.addObject("chckliAfter", items[1]);
+
+		// view
+		mav.setViewName("modifyItemOk");
+
+		// 객체 자체를 반환
+		return mav;
+	}
+	
+	
+	
+	
 
 }

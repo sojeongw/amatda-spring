@@ -26,12 +26,23 @@
 	
 	<!-- mysql -->
 	<!-- dao에서 autowired로 자동 주입 한다. -->
-	<beans:bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-	<beans:property name="driverClass" value="com.mysql.jdbc.Driver"/>
+	<!-- <beans:bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+	<beans:property name="driverClass" value="com.mysql.jdbc.Driver"/> 
 	<beans:property name="jdbcUrl" value="jdbc:mysql://localhost:port/스키마명"/>
 	<beans:property name="user" value="username"/>
 	<beans:property name="password" value="password"/>
+	</beans:bean>-->
+	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	 <beans:property name ="driverClassName" value="com.mysql.cj.jdbc.Driver"></beans:property>
+	 <beans:property name ="url" value="jdbc:mysql://ktjinstance.c4qufde8eeuf.ap-northeast-2.rds.amazonaws.com:3306/ktjdb?characterEncoding=UTF-8&amp;serverTimezone=UTC"></beans:property>
+	 <beans:property name="username" value="ktj"></beans:property>
+	 <beans:property name="password" value="tmxkzmfo1!"></beans:property>
 	</beans:bean>
+	
+	
+	
+	
+	
 
 	
 	
