@@ -1,6 +1,7 @@
 package com.nexters.amatda.checklist.controller;
 
 
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nexters.amatda.HomeController;
@@ -29,13 +31,33 @@ public class CheckListController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-
+	/*
+	@RequestMapping(value="/list")
+	@ResponseBody
+	
+	public Map<String, Object> printList(Model model) {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+    
+		System.out.println("printList()");
+		command = new BListCommand( );
+		command.execute(model);
+		
+		map = model.asMap();
+		ArrayList<BDto> dtos = (ArrayList<BDto>) map.get("list");
+		
+		map.clear();
+		map.put("list", dtos);
+		
+		return map;
+	}
+	*/
 
 	@RequestMapping(value = "/itemList", method = RequestMethod.GET)
-	public String itemList(CheckList checkList) {
+	public @ResponseBody CheckList itemList(CheckList checkList) {
 		
 		
-		return "/checklist/itemList";
+		return checkList;
 	}
 	
 	@RequestMapping(value = "/addItem", method = RequestMethod.GET)

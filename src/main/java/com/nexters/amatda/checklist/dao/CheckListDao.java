@@ -34,7 +34,7 @@ public class CheckListDao implements ICheckListDao {
 		
 		
 
-		final String sql = "INSERT INTO package (pId, pcId, pName, pColor,pCheck) values (2,2,?,'grey','N')";
+		final String sql = "INSERT INTO package (pId, pcId, pName, pColor, pCheck) values (3,3,?,'grey','N')";
 
 		result = template.update(sql, new PreparedStatementSetter() {
 

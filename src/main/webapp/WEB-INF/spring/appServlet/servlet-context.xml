@@ -24,6 +24,7 @@
 	<context:component-scan base-package="com.nexters.amatda" />
 	
 	
+	
 	<!-- mysql -->
 	<!-- dao에서 autowired로 자동 주입 한다. -->
 	<!-- <beans:bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -38,12 +39,6 @@
 	 <beans:property name="username" value="ktj"></beans:property>
 	 <beans:property name="password" value="tmxkzmfo1!"></beans:property>
 	</beans:bean>
-	
-	
-	
-	
-	
-
 	
 	
 </beans:beans>
